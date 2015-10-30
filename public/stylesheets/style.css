@@ -5,51 +5,48 @@ body {
 }
 
 a {
-  color: white;
-}
-
-#main-header .navbar-fat{
-    position: absolute;
-    padding: 20px 60px 20px 20px;
-    background: linear-gradient(0deg, rgba(0,0,0,0) 0, rgba(0,0,0,0.5) 100%);
-    z-index: 1000;
-}
-
-.navbar{
-    width: 100%;
-}
-
-.navbar-collapse ul li a{
     color: white;
 }
-.navbar-default{
-    border: 0;
+
+.body-container{
+    margin-top: 4%;
+    height : 400px;
 }
 
-.nav-custom{
-    background: transparent;
+.item-fix-height{
+    height: 500px;
+}
+
+.item-fix-height img{
+    width: 100%;
+    height: 100%;
+}
+.navbar-custom{
+    background: rgba(0,0,0,0.4);
     border: none;
 }
 
-.cover .full-window{
-    height: 100%;
-    width: 100%;
-    min-height: 480px;
-}
-.cover{
-    position: relative;
-    width: 100%;
-}
-
 #main-footer{
+    width: 100%;
     background-color: darkgrey;
+    padding: 0px;
+    margin: 0px;
 }
 
 #main-footer .container{
-    padding-top: 2%;
+    margin-top: 8%;
 }
 
 .copy{
-    padding: 2%;
+
     text-align: center;
+}
+
+/* IoT Page Css */
+.iot{
+    height: 100%;
+    width: 100%;
+    min-height: 680px;
+    border: solid red 1px;
+    background-color: antiquewhite;
 }
