@@ -61,3 +61,10 @@ a {
 button {
     margin-top: 90px;
 }
+
+.box-body {
+    padding: 40px;
+}
+h2 {
+    text-align: center;
+}
