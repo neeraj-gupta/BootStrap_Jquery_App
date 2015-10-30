@@ -1,6 +1,9 @@
 body {
-  margin: 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    position: fixed;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     background-color: white;
 }
 
@@ -8,38 +11,56 @@ a {
     color: white;
 }
 
-.body-container{
-    margin-top: 4%;
-    height : 400px;
-}
-
-.item-fix-height{
-    height: 500px;
-}
-
-.item-fix-height img{
-    width: 100%;
+.custom-container {
     height: 100%;
-}
-.navbar-custom{
-    background: rgba(0,0,0,0.4);
-    border: none;
+    width: 100%;
+    padding: 0px;
 }
 
-#main-footer{
+#main-header {
+    position: relative;
+    height: auto;
+}
+
+.navbar-custom{
+    top: 0px;
+    margin: 0px;
+    border: none;
+    border-radius: 0px;
+    background: rgba(0,0,0,0.4);
+}
+
+.body-container{
+    position: relative;
+    height: 80%;
+    overflow: hidden;
+}
+
+.carousel img {
+    min-width: 100%;
+    height: 100%;
+    max-width: none;
+}
+
+.main-footer{
+    position: relative;
+    height: 12%;
     width: 100%;
     background-color: darkgrey;
     padding: 0px;
     margin: 0px;
 }
 
-#main-footer .container{
-    margin-top: 8%;
+footer {
+    height: 100%;
 }
 
+#feed-row{
+    height: 50%;
+}
 .copy{
-
     text-align: center;
+    bottom: 0;
 }
 
 /* IoT Page Css */
@@ -68,3 +89,21 @@ button {
 h2 {
     text-align: center;
 }
+
+/* Media Queries */
+
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}
+}
+/* Tabled Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+}
+img { max-width: 100%; }
+html { font-size: 100%; }
+@media (min-width: 640px) { body {font-size: 0.7rem;} }
+@media (min-width: 960px) { body {font-size: 0.85rem;} }
+@media (min-width: 1100px) { body {font-size: 1rem;} }
