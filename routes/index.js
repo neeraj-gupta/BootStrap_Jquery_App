@@ -10,4 +10,8 @@ router.get('/iot', function(req, res, next){
   res.render('iot', {title: 'IoT Page'});
 });
 
+router.get('/bigdata', function(req, res, next) {
+    res.render('bigdata', {title: 'My Website'});
+});
+
 module.exports = router;
