@@ -94,6 +94,82 @@ h2 {
     text-align: center;
 }
 
+.prev-blog-links {
+
+    display: block;
+}
+
+.prev-blog-links-container {
+    background: rgba(51, 122, 183, 0.05);
+    padding: 0;
+    margin:15px 10px 10px 20px;
+    min-height: 300px;
+}
+
+.prev-blog-links-container h6, .published-reports h6 {
+    padding: 10px 10px 5px 10px;
+    color: #555;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.33);
+}
+
+
+.prev-blog-links-container ul {
+    list-style: none;
+    padding:0;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.prev-blog-links-container li {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.33);
+}
+
+.prev-blog-links-container li:last-child {
+    border-bottom: none;
+}
+
+.prev-blog-links-container li a {
+    color: rgba(32, 63, 230, 0.62);
+    cursor: pointer;
+    display: block;
+    padding: 8px 20px;
+}
+
+.prev-blog-links-container li a:hover {
+    text-decoration: none;
+}
+
+.prev-blog-links-container li a:active {
+    color: violet;
+}
+
+.blog-content {
+    display: block;
+    text-align: justify;
+    letter-spacing: 1.5px;
+    word-spacing: 1px;
+    line-height: 2em;
+}
+
+
+.published-reports {
+    display: block;
+    height: 300px;
+    margin-top: 5em;
+    margin: 5em 3em;
+}
+
+#blog-id {
+    text-align:center;
+    margin-top: 5em;
+    margin-bottom: 1.5em;
+}
+
+
 /* Media Queries */
 
 /* Tablet Landscape */
