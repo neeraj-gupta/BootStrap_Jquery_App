@@ -14,4 +14,8 @@ router.get('/bigdata', function(req, res, next) {
     res.render('bigdata', {title: 'My Website'});
 });
 
+router.get('/locations', function(req, res, next) {
+    res.render('locations', {title: 'My Website'});
+});
+
 module.exports = router;
