@@ -13,11 +13,12 @@ function loadBlogContent(){
 
 	var link = $(this).attr('data-href');
 	$.getJSON("blog/?link=" + link, function(result){
-
+		console.log(result);
 		$("#blog-id").text(result.title);
-		$("#blog-content").append(result.content);
+		$("#blog-content").text(result.content);
 		console.log(result);
 		//load the related technology report
 		//var variablename = new PDFObject({ url: "http://steve.vinoski.net/pdf/IC-Node.js.pdf" }).embed("techreport");
+		var variablename = new PDFObject({ url: result.reportlink }).embed("techreport");
 	});
 }

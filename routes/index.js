@@ -28,6 +28,7 @@ router.get('/blog', function(req, res, next) {
 			if(err){
 				console.log(err);
 			}
+			console.log(doc);
 			res.json(doc);
 		})
 	}
