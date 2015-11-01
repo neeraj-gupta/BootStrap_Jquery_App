@@ -17,13 +17,31 @@
             <h2 style="color: burlywood">Executive Team</h2>
             <div class="photos-container">
                 <ul class="clearfix">
-                    <% for(i = 0; i < 5; i++) { %>
-                        <li>
-                            <a href="../images/user.jpg" rel="lightbox" title="" data-toggle="modal" data-target="#user-Modal">
-                                <img src="../images/user.jpg" width="150" height="150">
-                            </a>
-                        </li>
-                    <% } %>
+                    <li>
+                        <a rel="lightbox" data-toggle="modal" data-target="#user-Modal">
+                            <img src="../images/user.jpg" width="150" height="150" data-id="111">
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="lightbox" data-toggle="modal" data-target="#user-Modal">
+                            <img src="../images/user.jpg" width="150" height="150" data-id="222">
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="lightbox" data-toggle="modal" data-target="#user-Modal">
+                            <img src="../images/user.jpg" width="150" height="150" data-id="333">
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="lightbox" data-toggle="modal" data-target="#user-Modal">
+                            <img src="../images/user.jpg" width="150" height="150" data-id="444">
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="lightbox" data-toggle="modal" data-target="#user-Modal">
+                            <img src="../images/user.jpg" width="150" height="150" data-id="555">
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -32,15 +50,26 @@
     <div class="modal fade" id="user-Modal" >
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header modal-header-custom">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
-                    <p>One fine body&hellip;</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="../images/user.jpg">
+                        </div>
+                        <div class="col-md-9">
+                            <h2 style="text-align: left;">Name</h2>
+                            <h6>Ceo</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="description">
+                            <h4>Description</h4>
+                            <p>This is the CEO Sumit Valecha, i am very talented person. I love sushi so much that
+                            you can ask me anytime to go with. I love anime a lot.</p>
+                        </div>
+                    </div>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
