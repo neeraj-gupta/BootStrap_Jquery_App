@@ -1,0 +1,49 @@
+<% include partials-main.ejs %>
+<% include partials-header.ejs %>
+<section>
+    <div class="body-container">
+        <h2>Management</h2>
+        <p>Our team consists of visionary people who consistently motivate people for the work they are doing
+        towards the organization. Trusted advisers, proven investors make it worth working for an people. OurCo
+        works in field of data processing and security solution for IT industry.</p>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="left-container">
+                <h4>Featured News</h4>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <h2 style="color: burlywood">Executive Team</h2>
+            <div class="photos-container">
+                <ul class="clearfix">
+                    <% for(i = 0; i < 5; i++) { %>
+                        <li>
+                            <a href="../images/user.jpg" rel="lightbox" title="" data-toggle="modal" data-target="#user-Modal">
+                                <img src="../images/user.jpg" width="150" height="150">
+                            </a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Download feature -->
+    <div class="modal fade" id="user-Modal" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</section>
+<% include partials-footer.ejs %>
