@@ -1,27 +1,34 @@
-body {
-    position: fixed;
+html, body {
+    position: absolute;
     margin: 0px;
     height: 100%;
     width: 100%;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     background-color: white;
+    overflow: hidden;
 }
-
-a {
-    color: white;
+a {  color: white;  }
+header, footer{
+    display: block;
+    height: 10%;
 }
-
-.custom-container {
-    height: 100%;
+section{
+    height: 80%;
     width: 100%;
-    padding: 0px;
+    display: block;
+    overflow: auto;
+    overflow-x: hidden;
 }
-
-#main-header {
+::-webkit-scrollbar {
+    display: none
+}
+section .body-container{
+    height: auto;
+}
+#maitn-header {
     position: relative;
     height: auto;
 }
-
 .navbar-custom{
     top: 0px;
     margin: 0px;
@@ -29,42 +36,41 @@ a {
     border-radius: 0px;
     background: #3E50B4;
     padding: 10px;
-    height: 70px;
 }
-
-.body-container{
-    position: relative;
-    height: 80%;
-    overflow: hidden;
-}
-
 .carousel img {
     min-width: 100%;
     height: 100%;
     max-width: none;
 }
-
-/*.main-footer{*/
-    /*position: relative;*/
-    /*height: 12%;*/
-    /*width: 100%;*/
-    /*background-color: #3E50B4;*/
-    /*padding: 10px;*/
-    /*margin: 0px;*/
-/*}*/
-
 footer {
     height: 100%;
     background-color: #3E50B4;
     color: white;
 }
-
-#feed-row{
-    height: 50%;
+.col-left .col-right{
+    display: inline-block;
+    height: 200px; }
+.col-left{
+    position: absolute;
+    left: 0px;
+    width: 30%;
+    float: left;
+    border: solid red 1px;
+}
+.col-left img{
+    height: 100%;
+    width: 100%;
+}
+.col-right{
+    position: relative;
+    width: 70%;
+    border: solid green 1px;
+}
+.tweet-feeds{
+    height: 70%;
 }
 .copy{
     text-align: center;
-    bottom: 0;
 }
 
 /* IoT Page Css */
@@ -94,17 +100,16 @@ h2 {
     text-align: center;
 }
 
+/* Blog Page CSS */
 .prev-blog-links {
 
     display: block;
 }
-
 .prev-blog-links-container {
     background: rgba(51, 122, 183, 0.05);
     padding: 0;
     margin:15px 10px 10px 20px;
 }
-
 .prev-blog-links-container h6, .published-reports h6 {
     padding: 10px 10px 5px 10px;
     color: #555;
@@ -114,38 +119,30 @@ h2 {
     font-weight: bold;
     border-bottom: 1px solid rgba(128, 128, 128, 0.33);
 }
-
-
 .prev-blog-links-container ul {
     list-style: none;
     padding:0;
     margin: 0;
     line-height: 1.5;
 }
-
 .prev-blog-links-container li {
     border-bottom: 1px solid rgba(128, 128, 128, 0.33);
 }
-
 .prev-blog-links-container li:last-child {
     border-bottom: none;
 }
-
 .prev-blog-links-container li a {
     color: rgba(32, 63, 230, 0.62);
     cursor: pointer;
     display: block;
     padding: 8px 20px;
 }
-
 .prev-blog-links-container li a:hover {
     text-decoration: none;
 }
-
 .prev-blog-links-container li a:active {
     color: violet;
 }
-
 .blog-content {
     display: block;
     text-align: justify;
@@ -153,21 +150,21 @@ h2 {
     word-spacing: 1px;
     line-height: 2em;
 }
+#blog-content{
+    height: auto;
 
-
+}
 .published-reports {
     display: block;
     height: 300px;
     margin-top: 5em;
     margin: 5em 3em;
 }
-
 #blog-id {
     text-align:center;
     margin-top: 5em;
     margin-bottom: 1.5em;
 }
-
 
 /* Media Queries */
 

@@ -5,7 +5,7 @@ var BlogSchema = mongoose.model("Blogs");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {title: 'My Website'});
+  res.render('index1', {title: 'My Website'});
 });
 
 router.get('/iot', function(req, res, next){

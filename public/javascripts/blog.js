@@ -1,7 +1,5 @@
 $(function(){
-
 	$(".prev-blog-links-container li a ").on("click", loadBlogContent);
-
 	console.log($(".prev-blog-links-container li").first()[0].children[0]);
 	//load first blog content on page load
 	$(".prev-blog-links-container li").first()[0].children[0].click();
@@ -9,8 +7,6 @@ $(function(){
 });
 
 function loadBlogContent(){
-	alert($(this).attr('data-href'));
-
 	var link = $(this).attr('data-href');
 	$.getJSON("blog/?link=" + link, function(result){
 		console.log(result);
