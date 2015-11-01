@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require("mongoose");
 var BlogSchema = mongoose.model("Blogs");
+var path=require('path'); // get path
+var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -41,11 +43,16 @@ router.get('/blog', function(req, res, next) {
 			}
 			console.log(doc);
 			res.json(doc);
-		})
+		});
 	}
 	else{
 		res.render('blog', {title: 'Blog'});
 	}
+});
+
+router.get('/download/:name', function(req, res, next) {
+    var dir = path.resolve(".")+'/downloads/' + req.params.name;
+    res.download(dir);
 });
 
 

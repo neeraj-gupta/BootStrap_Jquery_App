@@ -1,9 +1,14 @@
 $(function(){
 	$(".prev-blog-links-container li a ").on("click", loadBlogContent);
-	console.log($(".prev-blog-links-container li").first()[0].children[0]);
 	//load first blog content on page load
-	$(".prev-blog-links-container li").first()[0].children[0].click();
+    if($(".prev-blog-links-container li").first()[0] !== undefined){
+        $(".prev-blog-links-container li").first()[0].children[0].click();
+    }
 
+    $('#get-whitepaper-btn').click(function(e) {
+
+        downloadFile(e);
+    });
 });
 
 function loadBlogContent(){
@@ -17,4 +22,14 @@ function loadBlogContent(){
 		//var variablename = new PDFObject({ url: "http://steve.vinoski.net/pdf/IC-Node.js.pdf" }).embed("techreport");
 		var variablename = new PDFObject({ url: result.reportlink }).embed("techreport");
 	});
+}
+
+function downloadFile(e) {
+    //$.ajax({url:'/download/' + name, type:'GET'});
+
+    var name = $('#myModalLabel').html();
+    name = name + '.pdf';
+
+    e.preventDefault();
+    window.location.href = '/download/' + name;
 }
