@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require("mongoose");
 var BlogSchema = mongoose.model("Blogs");
+var path=require('path'); // get path
+var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -40,6 +42,11 @@ router.get('/contacts', function(req, res, next) {
     res.render('contacts', {title: 'Contact'});
 });
 
+router.get('/download/:name', function(req, res, next) {
+    var dir = path.resolve(".")+'/downloads/' + req.params.name;
+    res.download(dir);
+});
+
 router.get('/iot', function(req, res, next){
     res.render('iot', {title: 'IoT Page'});
 });
@@ -59,8 +66,5 @@ router.get('/mobile', function(req, res, next) {
 router.get('/process', function(req, res, next) {
     res.render('process', {title: 'Process Page'});
 });
-
-
-
 
 module.exports = router;
