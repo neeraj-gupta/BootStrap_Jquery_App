@@ -9,6 +9,41 @@ $(function(){
 
         downloadFile(e);
     });
+
+
+
+    	// create a connecion to the server
+	var _socket = io.connect("http://127.0.0.1:3000");
+
+	// handle the connected event emitted by the server when the connection is established
+	_socket.on('connected', function(data){
+		console.log("Msg from the server " + data);
+		//start listening for the twitter streams
+		if(_socket) {
+			_socket.emit("ready_to_stream");
+			_socket.emit("ready_to_receieve");
+		}
+		else {
+			alert("Socket not connected");
+		}
+	});
+
+	_socket.on('new_tweet', function(tweet){
+		console.log(tweet.text);
+		$('.feeds ul').append("<li>" + tweet.text + "</li>");
+	});
+
+	setInterval(function(){
+
+		var original = $(".feeds ul").css('margin-top');
+		original = parseInt(original.replace("px", ""));
+		var newval = original - 30;
+		newval = newval + "px";
+		$(".feeds ul").css('margin-top', newval);
+		$(".feeds ul:target").css('margin-top', newval);
+	}, 1000);
+
+
 });
 
 function loadBlogContent(){

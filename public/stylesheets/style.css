@@ -108,6 +108,36 @@ h2 {  text-align: center;  }
 #blog-content{
     height: auto;
 }
+
+/* Twitter feed ticker in footer*/
+
+.feeds {
+  box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.5);
+  height: 30px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 3px;
+  -webkit-user-select: none
+} 
+
+.feeds ul {
+  float: left;
+  padding-left: 20px;
+  -webkit-transition: margin-top 1s linear;
+}
+
+.feeds ul li {line-height: 30px; list-style: none }
+
+.feeds ul li a {
+  color: #fff;
+  text-decoration: none;
+  font: 14px Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none
+}
+/*================*/
+
 .published-reports {
     display: block;
     height: 300px;
