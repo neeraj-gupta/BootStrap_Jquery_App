@@ -14,7 +14,6 @@ $(function(){
 
 	// handle the connected event emitted by the server when the connection is established
 	_socket.on('connected', function(data){
-		console.log("Msg from the server " + data);
 		//start listening for the twitter streams
 		if(_socket) {
 			_socket.emit("ready_to_stream");
@@ -26,7 +25,6 @@ $(function(){
 	});
 
 	_socket.on('new_tweet', function(tweet){
-		console.log(tweet.text);
 		$('.feeds ul').append("<li>" + tweet.text + "</li>");
 	});
 
@@ -51,10 +49,10 @@ $(function(){
 function loadBlogContent(){
 	var link = $(this).attr('data-href');
 	$.getJSON("blog/?link=" + link, function(result){
-		console.log(result);
+
 		$("#blog-id").text(result.title);
 		$("#blog-content").text(result.content);
-		console.log(result);
+
 		//load the related technology report
 		//var variablename = new PDFObject({ url: "http://steve.vinoski.net/pdf/IC-Node.js.pdf" }).embed("techreport");
 		var variablename = new PDFObject({ url: result.reportlink }).embed("techreport");
