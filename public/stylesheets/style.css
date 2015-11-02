@@ -191,3 +191,16 @@ html { font-size: 100%; }
 .description{
     margin: 0 2%;
 }
+.color-block{
+    background: rgba(51, 122, 183, 0.05);
+}
+.divider{
+    margin: 5px 0 ;
+    border: 1px solid #e5e5e5;
+}
+.cust-btn{
+    margin-top: 0;
+}
+.modal-btns{
+    text-align: center;
+}

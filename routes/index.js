@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require("mongoose");
 var BlogSchema = mongoose.model("Blogs");
+var UserSchema = mongoose.model("VoidUser");
 var path=require('path'); // get path
 var fs = require('fs');
 
@@ -65,6 +66,15 @@ router.get('/mobile', function(req, res, next) {
 
 router.get('/process', function(req, res, next) {
     res.render('process', {title: 'Process Page'});
+});
+
+router.post('/voiduser', function(req, res, next) {
+    var user = new UserSchema(req.body);
+    user.save(function(err, data) {
+        res.json({
+            response: "success"
+        });
+    });
 });
 
 module.exports = router;
