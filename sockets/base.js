@@ -1,6 +1,4 @@
-var twitter = require("twit");
-var mongoose = require('mongoose');
-var TweetsSchema = mongoose.model("Tweets");
+var twitter = require("twit");;
 
 var twitter_client = new twitter({
   consumer_key: "M8S92g75F6ETn5StBn0YHWloG",
@@ -35,21 +33,9 @@ module.exports = function streamTweets(io) {
 			var stream = twitter_client.stream('statuses/filter', { track: 'god' })
 			//var sanFrancisco = [ '-122.75', '36.8', '-121.75', '37.8' ]
 			//var stream = twitter_client.stream('statuses/filter', { locations: sanFrancisco })
-
-
 			// emitted each time a new tweet comes into the stream
 			stream.on('tweet', function (tweet) {
-
 				socket.emit('new_tweet', tweet);
-			  	//save the tweets to mongodb collection
-			  	var Tweet = new TweetsSchema({
-			  		id: tweet.id,
-			  		text: tweet.text,
-			  		processed: false
-			  	});
-
-			  	//console.log(tweet)
-			  	//emit event to broadcast data only if users are online
 			  	if(online_users.length > 0){
 			  		//emit the data to all users but the first
 				  	socket.broadcast.emit('new tweet', tweet);
@@ -57,10 +43,8 @@ module.exports = function streamTweets(io) {
 				  	socket.emit('new tweet', tweet);
 				}
 				else{
-					// destroy the stram if no users are online
 					stream.stop();
 				}
-
 			}); 
 
 			stream.on('error', function(err){
@@ -77,7 +61,6 @@ module.exports = function streamTweets(io) {
 			}
 			printOnlineUsers();
 		});
-
 		//emit a signal once the user is connected
 		socket.emit('connected', {msg: "Connected!"});
 	});
