@@ -4,8 +4,8 @@
     <div class="body-container">
         <div class="row">
             <div class="col-md-2">
-                <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#popup-modal">Brochure</button>
-                <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#popup-modal">White Paper</button>
+                <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#popup-modal" data-whatever="IoT Brochure">Brochure</button>
+                <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#popup-modal" data-whatever="IoT White Paper">White Paper</button>
             </div>
 
             <div class="col-md-8">
@@ -47,7 +47,6 @@
                 </div>
             </div>
 
-
             <div class="col-md-2">
                 <h4>Customer Accolades</h4>
                 <blockquote class="blockquote">
@@ -60,6 +59,7 @@
                     <footer><cite title="chris-rapheal">Brandon McNulty</cite></footer>
                 </blockquote>
             </div>
+
             <!-- Modal for Download feature -->
             <div class="modal fade" id="popup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -69,27 +69,30 @@
                             <h4 class="modal-title" id="myModalLabel">a.txt</h4>
                         </div>
                         <div class="modal-body">
-                            <form id="get-whitepaper-form" action="/bigdata/get-whitepaper" method="get" class="form">
+                            <form id="get-whitepaper-form" class="form">
                                 <div class="form-group">
                                     <label for="firstname">First Name</label>
-                                    <input required type="text" class="form-control input-sm" name="fname">
+                                    <input required type="text" class="form-control input-sm" name="fname" id="fname">
                                 </div>
                                 <div class="form-group">
                                     <label for="lastname">Last Name</label>
-                                    <input required type="text" class="form-control input-sm" name="lname">
+                                    <input required type="text" class="form-control input-sm" name="lname" id="lname">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input required type="email" class="form-control input-sm" name="email">
+                                    <input required type="email" class="form-control input-sm" name="email" id="email">
+                                </div>
+                                <div class="modal-btns">
+                                    <button type="button" id="get-whitepaper-btn" class="btn btn-primary cust-btn">Download</button>
+                                    <button type="button" class="btn btn-default cust-btn" data-dismiss="modal">Close</button>
+                                    <button type="submit" style="display: none;"></button>
                                 </div>
                             </form>
-                            <button type="button" id="get-whitepaper-btn" class="btn btn-primary">Download</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-            </div><!-- modal dialog-->
-        </div><!-- modal end-->
-    </div>
+                </div><!-- modal dialog-->
+            </div><!-- modal end-->
+        </div>
     </div>
 </section>
 

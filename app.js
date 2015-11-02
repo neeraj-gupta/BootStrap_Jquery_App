@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://cmpe280:cmpe280@ds051843.mongolab.com:51843/user');
 require('./models/Blog');
+require('./models/User');
 
 var routes = require('./routes/index');
 var app = express();

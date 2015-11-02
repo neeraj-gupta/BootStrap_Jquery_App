@@ -4,13 +4,10 @@ $(function(){
     if($(".prev-blog-links-container li").first()[0] !== undefined){
         $(".prev-blog-links-container li").first()[0].children[0].click();
     }
-
+    // download file
     $('#get-whitepaper-btn').click(function(e) {
-
         downloadFile(e);
     });
-
-
 
     	// create a connecion to the server
 	var _socket = io.connect("http://127.0.0.1:3000");
@@ -43,7 +40,12 @@ $(function(){
 		$(".feeds ul:target").css('margin-top', newval);
 	}, 1000);
 
-
+    $('#popup-modal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var recepient = button.data('whatever');
+        var modal = $(this);
+        modal.find('.modal-title').text(recepient);
+    });
 });
 
 function loadBlogContent(){
@@ -60,11 +62,29 @@ function loadBlogContent(){
 }
 
 function downloadFile(e) {
-    //$.ajax({url:'/download/' + name, type:'GET'});
-
     var name = $('#myModalLabel').html();
-    name = name + '.pdf';
+    var form = $('#get-whitepaper-form');
 
-    e.preventDefault();
-    window.location.href = '/download/' + name;
+    var fname = $('#fname').val();
+    var lname = $('#lname').val();
+    var email = $('#email').val();
+
+    var voidData = {
+        fname: fname,
+        lname: lname,
+        email: email
+    }
+
+    if(!form[0].checkValidity()) {
+        $('#get-whitepaper-form').find('[type="submit"]').trigger('click');
+    } else {
+        name = name.toLowerCase();
+        name = name.replace(" ", "-");
+        name = name + '.pdf';
+
+        $.ajax({url:'/voiduser', type:'POST', data: voidData});
+
+        e.preventDefault();
+        window.location.href = '/download/' + name;
+    }
 }
