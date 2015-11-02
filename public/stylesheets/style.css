@@ -114,7 +114,7 @@ h2 {  text-align: center;  }
 .feeds {
   box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.5);
   height: 30px;
-  margin: 20px auto;
+  margin: 0px auto;
   overflow: hidden;
   border-radius: 4px;
   padding: 3px;
@@ -155,19 +155,6 @@ h2 {  text-align: center;  }
     background: rgba(51, 122, 183, 0.05);
     padding: 0;
     margin:15px 10px 10px 20px;
-}
-
-.member-conatiner{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-.memberThumb{
-    position: relative;
-    float: left;
-    width: 30%;
-    height: 48%;
 }
 
 /* gallery display */
